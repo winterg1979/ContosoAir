@@ -1,16 +1,16 @@
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 trigger:
   - master
 steps:
   - task: NodeTool@0
-    inputs: 
+    inputs:
       versionSpec: '14.x'
   - task: Npm@1
     inputs:
       command: 'custom'
-      customCommand: 'install --production'
-  - script: | 
+      customcommand: 'install --production'
+  - script: |
       npm install
       npm test
     displayName: 'Run unit tests'
@@ -30,16 +30,14 @@ steps:
   - task: ArchiveFiles@2
     displayName: 'Archive sources'
     inputs:
-      rootFolderOrFile: '$(Build.SourcesDirectory)'
+      rootFolderOrFile: $(Build.SourcesDirectory)
       includeRootFolder: false
-
   - task: CopyFiles@2
     displayName: 'Copy ARM templates'
     inputs:
       SourceFolder: deployment
       Contents: '*.json'
       TargetFolder: $(build.artifactstagingdirectory)/Templates
-  
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(build.artifactstagingdirectory)'
