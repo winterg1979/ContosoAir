@@ -2,6 +2,7 @@ pool:
   vmImage: ubuntu-latest
 trigger:
   - master
+  
 steps:
   - task: NodeTool@0
     inputs:
