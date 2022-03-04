@@ -1,5 +1,6 @@
 [![Build Status](https://dev.azure.com/garywinter2/Training_Test/_apis/build/status/winterg1979.ContosoAir?branchName=master)](https://dev.azure.com/garywinter2/Training_Test/_build/latest?definitionId=6&branchName=master)
 
+Go
 
 # This project is retired, archived, and no longer supported. You are welcome to continue to use and fork the repository.
 
